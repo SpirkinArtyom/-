@@ -1,0 +1,24 @@
+# Алгоритм установки и настройки необходимых программных продуктов
+
+## 1. Установка JDK
+1. Скачайте JDK с официального сайта Oracle: [Oracle JDK](https://www.oracle.com/java/technologies/javase-downloads.html).
+2. Установите JDK, следуя инструкциям установщика.
+3. Настройте переменные среды:
+   - В Windows: добавьте путь к JDK в переменную `PATH` и установите переменную `JAVA_HOME`.
+   - В Linux/MacOS: добавьте путь к JDK в файл `.bashrc` или `.zshrc`.
+
+## 2. Установка и настройка Apache Tomcat
+1. Скачайте Apache Tomcat с официального сайта: [Apache Tomcat](https://tomcat.apache.org/download-90.cgi).
+2. Распакуйте архив в выбранный каталог.
+3. Настройте Tomcat, отредактировав файл `conf/server.xml` (при необходимости).
+4. Запустите Tomcat, выполнив скрипт `bin/startup.bat` (Windows) или `bin/startup.sh` (Linux/MacOS).
+
+## 3. Установка и настройка MySQL
+1. Скачайте MySQL с официального сайта: [MySQL](https://dev.mysql.com/downloads/installer/).
+2. Установите MySQL, следуя инструкциям установщика.
+3. Создайте базу данных и пользователя:
+   ```sql
+   CREATE DATABASE library_db;
+   CREATE USER 'library_user'@'localhost' IDENTIFIED BY 'password';
+   GRANT ALL PRIVILEGES ON library_db.* TO 'library_user'@'localhost';
+   FLUSH PRIVILEGES;
