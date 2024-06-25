@@ -1,0 +1,5 @@
+<Resource name="jdbc/LibraryDB" auth="Container" type="javax.sql.DataSource"
+          maxTotal="20" maxIdle="10" maxWaitMillis="-1"
+          username="your_db_username" password="your_db_password"
+          driverClassName="com.mysql.cj.jdbc.Driver"
+          url="jdbc:mysql://localhost:3306/library_db"/>
