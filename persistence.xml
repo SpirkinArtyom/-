@@ -1,0 +1,11 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd" version="2.2">
+    <persistence-unit name="LibraryPU">
+        <jta-data-source>java:comp/env/jdbc/LibraryDB</jta-data-source>
+        <class>com.example.Author</class>
+        <class>com.example.Genre</class>
+        <class>com.example.Book</class>
+        <properties>
+            <property name="javax.persistence.schema-generation.database.action" value="create"/>
+        </properties>
+    </persistence-unit>
+</persistence>
