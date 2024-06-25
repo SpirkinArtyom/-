@@ -1,0 +1,14 @@
+@WebServlet("/books")
+public class BookServlet extends HttpServlet {
+    @EJB
+    private LibrarySessionBean librarySessionBean;
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Book> books = librarySessionBean.getAllBooks();
+        request.setAttribute("books", books);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("books.jsp");
+        dispatcher.forward(request, response);
+    }
+
+    // Обработка POST-запросов
+}
