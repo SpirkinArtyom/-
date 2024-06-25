@@ -1,0 +1,32 @@
+##### Текстовый документ с описанием разработки и развертывания страниц JSP
+
+```markdown
+# Порядок разработки и развертывания страниц JSP на сервере приложений
+
+## 1. Разработка компонентов приложения
+
+### Модель (Model)
+Создайте классы для представления данных:
+```java
+// Book.java
+public class Book {
+    private int id;
+    private String title;
+    private int authorId;
+    private int genreId;
+    // getters and setters
+}
+
+// Author.java
+public class Author {
+    private int id;
+    private String name;
+    // getters and setters
+}
+
+// Genre.java
+public class Genre {
+    private int id;
+    private String name;
+    // getters and setters
+}
