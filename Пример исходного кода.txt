@@ -1,0 +1,29 @@
+
+### Пример исходного кода
+
+Здесь приведены примеры основных компонентов, которые могут использоваться в вашем приложении. Полный исходный код можно разместить в репозитории на GitLab.
+
+#### Пример класса модели (Book.java)
+
+```java
+public class Book {
+    private int id;
+    private String title;
+    private int authorId;
+    private int genreId;
+
+    public Book() {}
+    
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+
+    public String getTitle() { return title; }
+    public void setTitle(String title) { this.title = title; }
+
+    public int getAuthorId() { return authorId; }
+    public void setAuthorId(int authorId) { this.authorId = authorId; }
+
+    public int getGenreId() { return genreId; }
+    public void setGenreId(int genreId) { this.genreId = genreId; }
+}
+

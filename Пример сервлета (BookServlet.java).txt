@@ -1,0 +1,36 @@
+@WebServlet("/books")
+public class BookServlet extends HttpServlet {
+    private BookDAO bookDAO;
+
+    public void init() {
+        bookDAO = new BookDAO();
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Book> books = bookDAO.getAllBooks();
+        request.setAttribute("books", books);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("books.jsp");
+        dispatcher.forward(request, response);
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+        if ("add".equals(action)) {
+            String title = request.getParameter("title");
+            int authorId = Integer.parseInt(request.getParameter("authorId"));
+            int genreId = Integer.parseInt(request.getParameter("genreId"));
+            bookDAO.addBook(new Book(title, authorId, genreId));
+        } else if ("edit".equals(action)) {
+            int id = Integer.parseInt(request.getParameter("id"));
+            String title = request.getParameter("title");
+            int authorId = Integer.parseInt(request.getParameter("authorId"));
+            int genreId = Integer.parseInt(request.getParameter("genreId"));
+            bookDAO.updateBook(new Book(id, title, authorId, genreId));
+        } else if ("delete".equals(action)) {
+            int id = Integer.parseInt(request.getParameter("id"));
+            bookDAO.deleteBook(id);
+        }
+        response.sendRedirect("books");
+    }
+}
+

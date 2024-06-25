@@ -1,0 +1,5 @@
+// BookServlet.java
+@WebServlet("/books")
+public class BookServlet extends HttpServlet {
+    // методы doGet, doPost для обработки запросов
+}
