@@ -1,0 +1,25 @@
+CREATE DATABASE library_db;
+CREATE TABLE Author (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Genre (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Book (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(100) NOT NULL,
+    author_id INT,
+    genre_id INT,
+    FOREIGN KEY (author_id) REFERENCES Author(id),
+    FOREIGN KEY (genre_id) REFERENCES Genre(id)
+);
+
+Наполнение базы данных минимальным содержимым:
+
+INSERT INTO Author (name) VALUES ('Author 1'), ('Author 2');
+INSERT INTO Genre (name) VALUES ('Genre 1'), ('Genre 2');
+INSERT INTO Book (title, author_id, genre_id) VALUES ('Book 1', 1, 1), ('Book 2', 2, 2);
