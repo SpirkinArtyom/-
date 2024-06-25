@@ -1,0 +1,14 @@
+// BookDAO.java
+public class BookDAO {
+    // методы для CRUD операций с таблицей книг
+}
+
+// AuthorDAO.java
+public class AuthorDAO {
+    // методы для CRUD операций с таблицей авторов
+}
+
+// GenreDAO.java
+public class GenreDAO {
+    // методы для CRUD операций с таблицей жанров
+}
